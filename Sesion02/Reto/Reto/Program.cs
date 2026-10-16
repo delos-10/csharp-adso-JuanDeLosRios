@@ -44,7 +44,13 @@ namespace Reto
             {
                 Console.WriteLine("Digite la opcion deseada: \n1. Consultar saldo\n2. Depositar\n3. Retirar\n4. Salir.\nElige la opcion: ");
 
-                opc = Convert.ToInt32(Console.ReadLine());
+                string entrada = Console.ReadLine();
+
+                if (!int.TryParse(entrada, out opc))
+                {
+                    Console.WriteLine("Ingrese una opcion valida");
+                    continue;
+                }
 
                 switch (opc)
                 {
